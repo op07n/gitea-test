@@ -1,6 +1,6 @@
 
 FROM jupyter/scipy-notebook:45f07a14b422
-RUN pip3 install \
+RUN pip install \
     jupyterhub \
     jhsingle-native-proxy>=0.0.9 \
     streamlit
