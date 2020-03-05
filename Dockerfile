@@ -3,6 +3,7 @@ FROM python:3.7
 RUN pip3 install \
     jupyterhub \
     jhsingle-native-proxy>=0.0.9
+    
 
 RUN wget -O gitea https://dl.gitea.io/gitea/1.11.0/gitea-1.11.0-linux-amd64
 
@@ -20,6 +21,6 @@ COPY --chown=jovyan:jovyan entrypoint.sh /home/jovyan
 
 EXPOSE 8888
 
-ENTRYPOINT ["/home/jovyan/entrypoint.sh"]
+# ENTRYPOINT ["/home/jovyan/entrypoint.sh"]
 
-CMD ["jhsingle-native-proxy", "--destport", "8505", "gitea", "web", "{--}port", "{port}", "--port", "8888"]
+CMD ["jhsingle-native-proxy", "--destport", "3000", "gitea", "web", "--port", "8888"]
