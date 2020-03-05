@@ -22,4 +22,4 @@ EXPOSE 8888
 
 ENTRYPOINT ["/home/jovyan/entrypoint.sh"]
 
-CMD ["jhsingle-native-proxy", "--destport", "8505", "gitea", "web", "--port", "8888"]
+CMD ["jhsingle-native-proxy", "--destport", "8505", "gitea", "web", "{--}port", "{port}", "--port", "8888"]
