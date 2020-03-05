@@ -2,7 +2,8 @@
 FROM python:3.7
 RUN pip3 install \
     jupyterhub \
-    jhsingle-native-proxy>=0.0.9
+    jhsingle-native-proxy>=0.0.9 \
+    streamlit
     
 
 RUN wget -O gitea https://dl.gitea.io/gitea/1.11.0/gitea-1.11.0-linux-amd64
