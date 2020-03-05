@@ -35,4 +35,4 @@ destport=$((port + 1))
 
 echo "Using internal port $destport"
 
-jhsingle-native-proxy --destport $destport --authtype none gitea web --port $port
+jhsingle-native-proxy --destport $destport --authtype none gitea web {--}port {port} --port $port
