@@ -10,7 +10,7 @@ RUN wget -O gitea https://dl.gitea.io/gitea/1.11.0/gitea-1.11.0-linux-amd64
 
 RUN chmod +x gitea
 
-RUN mv ./gitea /usr/bin/
+# RUN mv ./gitea /usr/bin/
 
 # create a user, since we don't want to run as root
 RUN useradd -m jovyan
@@ -19,6 +19,7 @@ WORKDIR $HOME
 USER jovyan
 
 COPY --chown=jovyan:jovyan entrypoint.sh /home/jovyan
+COPY --chown=jovyan:jovyan gitea /home/jovyan
 
 EXPOSE 8888
 
