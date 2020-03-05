@@ -18,8 +18,8 @@ USER jovyan
 
 COPY --chown=jovyan:jovyan entrypoint.sh /home/jovyan
 
-EXPOSE 3000
+EXPOSE 8888
 
 ENTRYPOINT ["/home/jovyan/entrypoint.sh"]
 
-CMD ["jhsingle-native-proxy", "--destport", "8505", "gitea", "web"]
+CMD ["jhsingle-native-proxy", "--destport", "8505", "gitea", "web", "--port", "8888"]
